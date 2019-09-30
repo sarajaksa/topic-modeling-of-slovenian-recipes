@@ -1,0 +1,1591 @@
+
+
+
+<!doctype html>
+<html lang="sl"><!-- InstanceBegin template="/Templates/ogrodje3.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+<link href="/css/skupaj-css.css?rel=4.02" rel="stylesheet" type="text/css" />
+<link href="/stiliprint.css" rel="stylesheet" type="text/css" media="print" />
+
+<link rel="stylesheet" href="/css/flickity.css" media="screen">
+
+<link href="/css/new-responsive.css" rel="stylesheet" type="text/css" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/grafika6/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/grafika6/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/grafika6/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/grafika6/favicons/manifest.json">
+<link rel="mask-icon" href="/grafika6/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/grafika6/favicons/favicon.ico">
+<meta name="msapplication-config" content="/grafika6/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link href='/css/recepti.css' rel='stylesheet' type='text/css' />
+<!-- InstanceBeginEditable name="stili" -->
+
+<!-- InstanceEndEditable -->
+
+<script type="text/javascript">
+
+	
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-15823371-4', {'storage': 'none', 'clientId': '3083861d00676353ddf39be3572b746c'});
+  ga('require', 'linkid', 'linkid.js');
+
+	
+	// Creates an adblock detection plugin.
+	ga('provide', 'adblockTracker', function(tracker, opts) {
+	  var ad = document.createElement('ins');
+	  ad.className = 'AdSense';
+	  ad.style.display = 'block';
+	  ad.style.position = 'absolute';
+	  ad.style.top = '-1px';
+	  ad.style.height = '1px';
+	  document.body.appendChild(ad);
+	  tracker.set('dimension' + opts.dimensionIndex, !ad.clientHeight);
+	  document.body.removeChild(ad);
+	});
+	
+	ga('require', 'adblockTracker', {dimensionIndex: 1});
+    ga('send', 'pageview'), {'anonymizeIp': true};
+  
+
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
+<!--    -->
+
+<script type="text/javascript" src="/js/roletke.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/js/funkcije-skupaj.js?v=006" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+
+$(function(){
+	$('#menu .main-menu #menu02').addClass("selected");
+	
+	
+	enquire.register("screen and (max-width: 768px)", {
+    match : function() {
+		
+			$('#glavni_menu').prop('id', 'glavni_menu_small').appendTo($('#glavni_menu_small_container'));
+		   
+		   $('#header-glava').prop('class', 'small');
+		   $('#main-kulslo-logo').prependTo($('#header-glava'));
+		   $('#kuverta-pismo').insertBefore($('#glavaPasica'));
+		 
+    },
+	
+	 unmatch : function() {
+	  $('#main-kulslo-logo').prependTo($('#glava_main .glava'));
+      $('#glavni_menu_small').prop('id', 'glavni_menu').appendTo($('#glava_velika'));
+	  $('#header-glava').prop('class', '');
+	  
+	  $('#kuverta-pismo').prependTo($('#prijava-menu'));
+	  
+ 		}
+	});
+	
+	
+})
+
+  $(window).on('load resize', function() {
+
+
+	$(".spinner-container").delay(100).fadeOut(600).remove();
+	
+	
+	
+})
+
+
+
+jQuery.validator.addMethod(
+    "money",
+    function(value, element) {
+        var isValidMoney = /^\d{0,5}(\,\d{0,2})?$/.test(value);
+        return this.optional(element) || isValidMoney;
+    },
+    "Insert "
+);
+
+jQuery.uaMatch = function( ua ) {
+        ua = ua.toLowerCase();
+
+        var match = /(chrome)[ /]([w.]+)/.exec( ua ) ||
+                /(webkit)[ /]([w.]+)/.exec( ua ) ||
+                /(opera)(?:.*version|)[ /]([w.]+)/.exec( ua ) ||
+                /(msie) ([w.]+)/.exec( ua ) ||
+                ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([w.]+)|)/.exec( ua ) ||
+                [];
+
+        return {
+                browser: match[ 1 ] || "",
+                version: match[ 2 ] || "0"
+        };
+};
+
+// Don't clobber any existing jQuery.browser in case it's different
+if ( !jQuery.browser ) {
+        matched = jQuery.uaMatch( navigator.userAgent );
+        browser = {};
+
+        if ( matched.browser ) {
+                browser[ matched.browser ] = true;
+                browser.version = matched.version;
+        }
+
+        // Chrome is Webkit, but Webkit is also Safari.
+        if ( browser.chrome ) {
+                browser.webkit = true;
+        } else if ( browser.webkit ) {
+                browser.safari = true;
+        }
+
+        jQuery.browser = browser;
+}
+
+
+
+
+</script>
+
+<script src="/js/flickity.min.js"></script>
+
+<script src="/js/new-responsive.js" type="text/javascript"></script> <script type="text/javascript"  src="/js/jquery.cookiecuttr.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	// activate cookie cutter
+    $.cookieCuttr({
+		cookieAnalytics:false,
+		cookieCutter: true,
+		
+    	cookieDeclineButton: false,
+		cookieOverlayEnabled:true,
+		
+		cookieDisable: '.piskotki',
+		cookieDomain: 'kulinarika.net',
+		cookieNotificationLocationBottom: false,
+		cookieWhatAreTheyLink:'/zasebnost/',
+		cookiePolicyLink: '/zasebnost/'
+    });
+}); 	
+</script><script type='text/javascript'><!--
+OA_zones = {
+'cona17' : 17,
+'cona18' : 18,
+'cona19' : 19,
+'cona20' : 20,
+'cona21' : 21,
+'cona22' : 22,
+'cona25' : 25,
+'cona1' : 1,
+'cona3' : 3,
+'cona6' : 6,
+'cona16' : 16
+}
+//--></script>
+<script type="text/javascript" src="https://oglasi2.kulinarika.net/www/delivery/spcjs.php?id=1&amp;kanal=recepti&amp;kat=ostalo&amp;podkat=polizdelki&amp;user=bernarda85"></script>
+
+<!-- InstanceBeginEditable name="napis" -->
+<!--<link href="/css/ajax-dynamic-list.css" rel="stylesheet" type="text/css" /> -->
+
+<meta name="robots" content="index,follow" />
+<title>Recept: Grenadirmarš - Kulinarika.net</title>
+
+
+<meta name="Description" content="jeseniška domača jed (včasih: krompir in testenine, danes: dodana še klobasa/hrenovka)">
+<meta name="Keywords" content=" ">
+
+<meta property="fb:app_id" content="182018238801081" />
+<meta property="og:title" content="Recept: Grenadirmarš - Kulinarika.net" />
+<meta property="og:description" content="jeseniška domača jed (včasih: krompir in testenine, danes: dodana še klobasa/hrenovka)" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Kulinarika.net" />
+<meta property="og:url" content="https://www.kulinarika.net/recepti/8408/ostale-jedi/grenadirmars/" />
+
+<meta property="og:image" content="https://www.kulinarika.net/slikerecepti/8408/0.jpg?0.7055475" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:secure_url" content="https://www.kulinarika.net/slikerecepti/8408/0.jpg?0.533424" />
+
+<script type="text/javascript" src="/js/mnenja.js"></script>
+<script type="text/javascript" src="/js/knjiga.js"></script>
+<link href="/p7epm/epm5/p7EPM05.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/p7epm/p7EPMscripts.js"></script>
+<script type="text/javascript" src="/js/galleria-1.5.7.min.js"></script>
+
+<link rel="stylesheet" href="/css/galleria/azur/galleria.azur.min.css">
+<script src="/css/galleria/azur/galleria.azur.min.1.5.js"></script>
+  <link href="/css/venobox/venobox.css" type="text/css" rel="stylesheet" />
+  <script src="/js/jquery.venobox.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+hs.preserveContent = false;
+
+$(window).on('load resize', function(){
+	
+	if ($(window).width() <= 500) {
+	//$('#oglasi-stranski').insertAfter($('#receptSestavine'));
+  } else {
+    //$('#oglasi-stranski').insertAfter($('.info-kuha'));
+  }
+	
+	})
+
+$(document).on({
+		click: function(){
+			var IDMnenje = $(this).data('id');
+			$(this).prev('.like-stevilo').load("/inc/ajax-funkcije.asp?akcija=like_add_delete&s=1&IDMnenje=" + IDMnenje + "&rand=" + Math.round(new Date().getTime()/1000), function() {
+				//reFacebook();
+				$(this).parent().children('.likes-holder').toggleClass('on');
+				});
+		}
+	},
+ 	'div.likes a.likes-holder');
+
+
+
+$(document).ready(function() {
+
+
+	$('.odpirac-dodaj-zabelezko').venobox({
+		post_close_callback: function(event){
+			window.location.reload()
+		}
+   		 });
+	
+	$('#popup-statistika-holder').venobox({
+        titleattr: 'data-title'    // default: 'title'
+    });
+		
+	$('#popup-oceneseznam-holder').bind('click', function () {
+		return hs.htmlExpand(this, { width:280, height: 500, contentId: 'ocenerecepta', objectType: 'ajax', cacheAjax: false} )
+	})
+
+	$('#popup-ocene-holder').bind('click', function () {
+		return hs.htmlExpand(this, { width:385, height: 173, contentId: 'popup-ocene', objectType: 'iframe', preserveContent: false} )
+	})
+
+
+
+	$('#TekneIDSubmit').bind('click', function() {
+		loadingStart("loadingRecipeID");
+		$('#recipename').load('/inc/ajax-checkrecipename.asp?akcija=priporocilo&IDRecept=8408&ID=' + $('#TekneID').val(), function() {
+			loadingStop("loadingRecipeID");
+			});
+	})
+	
+	$('#TekneNameSubmit').bind('click', function() {
+		loadingStart("loadingRecipeName");
+		$('#recipename2').load('/inc/ajax-checkrecipename.asp?akcija=priporocilo&IDRecept=8408&ImeRecepta=' + encodeURI($('#TekneName').val()), function() {
+			loadingStop("loadingRecipeName");	
+		});
+	})
+	
+	var optionsSubmit = {
+		target:	'#telo',
+		beforeSubmit:  showRequest,
+		success: function(responseText, statusText, xhr, $form) {
+			napisgumb = $form.find('[name=napisgumb]').val();
+			if (napisgumb==1){
+					$form.find('input[type=submit]').css('display', 'none')
+					$form.find('[name=napisgumb]').val('2');
+				}
+			loadingStop('loadingOddajPriporocilo');
+			}	
+		
+	}
+	
+	$(document).on("submit", ".PriporociRecept", function() {
+			$(this).ajaxSubmit(optionsSubmit)
+			return false;
+	})
+	
+	var optionsSubmit2 = {
+		target:	'#telo',
+		beforeSubmit:  showRequest,
+		success: function(responseText, statusText, xhr, $form) {
+			IDPriporocilo = $form.find('[name=IDpriporocilo]').val();
+			$('#submit' + IDPriporocilo).css('display', 'inline');
+			$('#PriporociRecept' + IDPriporocilo).find('[name=napisgumb]').val('1');
+			loadingStop('#loadingOddajPriporocilo');
+			}	
+		
+	}
+	
+	$(document).on("submit", ".PriporociRecept2", function() {	
+			$(this).ajaxSubmit(optionsSubmit2)
+			return false;
+	})
+	
+
+	
+	function showRequest() {
+		loadingStart('loadingOddajPriporocilo')
+		}
+		
+	
+	$('#posljiprijatelju').on("click", function() {
+	
+		$.ajax({
+			url: '/inc/ajax-funkcije.asp?id=8408&akcija=posljiprijatelju',
+			success: function(text)
+				{
+
+				}
+		})	
+	
+	})
+		
+
+		
+	
+})
+
+
+
+
+
+
+function blocking(nr)
+{
+	if (document.layers)
+	{
+		document.layers[nr].display = 'block';
+	}
+	else if (document.all)
+	{
+		document.all[nr].style.display = 'block';
+	}
+	else if (document.getElementById)
+	{
+		document.getElementById(nr).style.display = 'block';
+	}
+	window.location.hash="ocenite";
+}
+	
+	
+$(document).ready(function() {
+	
+	if ($('#malioglasi').height()<50)
+		{	
+			$('#malioglasi').hide();
+		};
+
+
+	enquire.register("screen and (max-width: 768px)", {
+		match : function() {
+		   
+		   $("#receptSestavine .podpora1").appendTo("#receptPostopek .podpora2");
+		   $("#receptSestavine .video-teaser").insertAfter("#facebookKomplet");
+		   
+		   $('.mobileslider').flickity({
+				// options
+				cellAlign: 'left',
+				contain: true,
+				prevNextButtons: false
+			});
+		},
+		
+		 unmatch : function() {
+
+		   $("#receptPostopek .podpora1").appendTo("#receptSestavine");
+		   $("#receptPostopek .video-teaser").appendTo("#receptSestavine");		   
+		   
+		   $('.mobileslider').flickity('destroy');
+		   
+		   		 
+		}
+	});
+		
+		
+		$('#telo').load("/inc/ajax-priporocamo.asp?ID=8408");
+		
+			
+		
+				
+				var fetch=3
+				  
+		  		$.ajax({
+					url: '/inc/ajax-receptislike.asp',
+					data: {
+						IDRecept: 8408,
+						fetch: fetch,
+						first: 1,
+						last: 50
+					},
+					success: function(xml) {
+						mycarousel_itemAddCallback(xml);
+					},
+					datatype: 'json'
+				});
+				
+				if (fetch==1) {
+				
+					$('#ReceptiFotkeStran').val("1");
+					$('#ReceptiFotkeStranPostopek').val("-1")
+				
+				} else if (fetch==2) {
+					$('#ReceptiFotkeStranPostopek').val("1")
+					$('#ReceptiFotkeStran').val("-1");
+				}
+				  
+
+				
+				function fetchSlike(div) {
+					
+	
+					if (div.length)
+					{
+						var index = div.val();
+					}
+					else
+					{
+						var index=1
+					}
+					var fetch=1
+					if (index>100) {
+						fetch=2;
+						index-=100;
+						}
+					if (index>-1)
+					{
+					$.ajax({
+					url: '/inc/ajax-receptislike.asp',
+					data: {
+						IDRecept: 8408,
+						fetch: fetch,
+						first: (index-1)*50+1,
+						last: index*50
+					},
+					success: function(xml) {
+						var gallery = Galleria.get(0);
+						gallery.load(xml.response);
+						window.setTimeout(function(){
+							gallery.lazyLoadChunks(3);
+						},10);
+					},
+					datatype: 'json'
+					});
+					}
+					
+					}
+				
+			
+				$('#ReceptiFotkeStran').bind("change", function() {
+					fetchSlike($(this));
+					$('#ReceptiFotkeStranPostopek').val("-1")
+				});
+				$('#ReceptiFotkeStranPostopek').bind("change", function() {
+					fetchSlike($(this));
+					$('#ReceptiFotkeStran').val("-1")
+				});	
+				/*
+				enquire.register("screen and (max-width: 999px)", {
+				
+					deferSetup : true,
+					setup : function() {
+						// load content via AJAX
+					},
+					match : function() {
+						$('#oglas-aside').appendTo('#malioglasi')
+						$('#oglas-aside2').appendTo('#malioglasi')
+					},
+					unmatch : function() {
+						$('#oglas-aside').appendTo('#oglasi-stranski')
+						$('#oglas-aside2').appendTo('#oglasi-stranski')
+					}  
+				
+				});
+		*/
+
+
+
+
+
+function mycarousel_itemAddCallback(xml)
+{
+	
+     Galleria.run('#sliderRecepti', {
+		 
+		 lightbox: true,
+		 thumbnails:false,
+		 showImagenav: true,
+		 
+		 overlayOpacity:0.75,
+		 thumbCrop: true,
+		 imageCrop: true,
+		 variation:'light',
+		 height:0.85,
+		 fullscreenDoubleTap:true,
+		 trueFullscreen: false,
+		 fullscreenCrop: false,
+		 _toggleCaption: false,
+         _showCaption: true,
+         _showTooltip: false,
+		 responsive: true,
+		 videoPoster: false,
+		_locale: {
+			show_captions: 'Prikaži opis',
+			hide_captions: 'Skrij opis',
+			play: 'Predvajaj',
+			pause: 'Zamrzni',
+			enter_fullscreen: 'Vključi polnozaslonski način',
+			exit_fullscreen: 'Izhod iz polnozaslonskega načina',
+			next: 'Naslednja fotografija',
+			prev: 'Prejšnja fotografija',
+			showing_image: 'Prikazujem fotografijo %s od %s'
+    	},
+		youtube: {
+			color:'red',
+			modestbranding: '1'
+			},
+    	dataSource: xml.response
+		});
+
+	Galleria.ready(function(options) {
+            var gallery=this;
+			 
+			gallery.attachKeyboard({
+       				 right: this.next,
+        			left: this.prev
+   				 })
+				 
+				 	
+				});
+				
+		
+			}
+			
+			Galleria.on("fullscreen_enter", function(e){
+											
+							Galleria.configure({
+									maxScaleRatio: 1.4
+							}); 
+						
+					});
+		
+		Galleria.on("fullscreen_exit", function(e){
+						Galleria.configure({maxScaleRatio: 10}); 
+					});
+		
+		// Dodamo video thumbu slog video
+		Galleria.on('thumbnail',function(e){
+    		if(this.getData(e.index).video){
+        		$(e.thumbTarget).parent().addClass('video');
+    		}
+			});
+		
+		Galleria.configure({
+			extend: function() {
+				if ( this.getDataLength() < 2 ) {
+					/*this.$('container').addClass('galleria-single-image');*/
+				}
+			}
+		});
+		 
+		 $(document).on('click', '.galleria-lightbox-box', function() {
+				Galleria.get(0).closeLightbox();
+			});
+		
+
+
+	 $(window).on("resize",function(){
+
+
+
+ 		       });
+});
+</script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<script type="text/javascript" src="/ad/intext/intext2.js"></script>
+
+<!-- InstanceEndEditable -->
+
+
+
+<!-- InstanceParam name="onload" type="text" value="" -->
+</head>
+
+<body onload="">
+<div id='ozadjeReklamaContainer'><div id="ozadjeReklama"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona16');
+//]]>-->
+</script></div></div>
+<div id="Container" class="cf"> 
+   
+
+
+<div class="spinner-container">
+<div class="spinner">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div></div>
+
+<section id="glava_kulslo">
+<div id="glava_velika">
+<div id="glava_main" class="cf">
+
+
+<div class='glava'><a id='main-kulslo-logo' href='/'><img class='logo-veliki' src='/grafika6/logotipi/logo1.png'><img class='logo-mali' src='/grafika6/logotipi/logo-mali.png'></div><ul class='cf izpostavljeni Najnovejsi mobileslider'><li class='carousel-cell enNajnovejsi'><a href='/recepti/3914/ozimnica/vlozen-strocji-fizol/' class='image-wrap'><img class='' src='/slikerecepti/3914/6-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/3914/ozimnica/vlozen-strocji-fizol/'>Vložen stročji fižol</a></p></li><li class='carousel-cell enNajnovejsi'><a href='/recepti/4139/ozimnica/vlozena-rdeca-pesa/' class='image-wrap'><img class='' src='/slikerecepti/4139/0-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/4139/ozimnica/vlozena-rdeca-pesa/'>Vložena rdeča pesa</a></p></li><li class='carousel-cell enNajnovejsi'><a href='/recepti/7199/mesne-jedi/polnjena-paprika-na-klasicen-nacin/' class='image-wrap'><img class='' src='/slikerecepti/7199/1-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/7199/mesne-jedi/polnjena-paprika-na-klasicen-nacin/'>Polnjena paprika na klasičen način</a></p></li><li class='carousel-cell enNajnovejsi'><a href='/recepti/8226/ozimnica/vlozene-paprike/' class='image-wrap'><img class='' src='/slikerecepti/8226/0-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/8226/ozimnica/vlozene-paprike/'>Vložene paprike</a></p></li><li class='carousel-cell enNajnovejsi no-desktop'><a href='/recepti/10197/zelenjavne-jedi/bucni-polpeti/' class='image-wrap'><img class='' src='/slikerecepti/10197/12-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/10197/zelenjavne-jedi/bucni-polpeti/'>Bučni polpeti</a></p></li><li class='carousel-cell enNajnovejsi no-desktop'><a href='/recepti/11067/sladice/palacinke-osnovni-recept-/' class='image-wrap'><img class='' src='/slikerecepti/11067/2-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/11067/sladice/palacinke-osnovni-recept-/'>Palačinke (osnovni recept)</a></p></li><li class='carousel-cell enNajnovejsi no-desktop'><a href='/recepti/11562/mesne-jedi/polnjene-paprike/' class='image-wrap'><img class='' src='/slikerecepti/11562/5-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/11562/mesne-jedi/polnjene-paprike/'>Polnjene paprike</a></p></li><li class='carousel-cell enNajnovejsi no-desktop'><a href='/recepti/16782/ozimnica/paradiznikova-mezga/' class='image-wrap'><img class='' src='/slikerecepti/16782/1-200x150.jpg'></a><p class='ime single-line'><a href='/recepti/16782/ozimnica/paradiznikova-mezga/'>Paradižnikova mezga</a></p></li></ul>
+
+</div>
+
+    
+
+
+
+  <nav id="glavni_menu" class="cf">
+			<ul>
+				<li><a  class='izbrano' href="/recepti/">Recepti</a></li>
+				<li><a  href="/forum/">Forumi</a></li>
+				<li><a  href="/fotoalbumi/">Albumi</a></li>
+				<li><a  href="/zid/">Zid</a></li>
+				<li><a  href="/blogi/">Blogi</a></li>
+				<li><a  href="/zdravje/">Zdravo</a></li>
+				<li><a  href="/zanimivo/">Zanimivo</a></li>
+     			<li><a class="noborder" href="/iskanje/?datumi=tridni#novosti">Novosti</a></li>
+			</ul>
+	</nav>
+ </div>
+ <div class="landing">
+<header id="header-glava">
+
+	<div id="glavni_menu_small_container">
+          <a href="#menu" id="glavni_menu_toggle"><span></span></a>
+      
+
+    </div>
+
+  
+    <div id="kategorijeMenu">
+        <ul>
+          <li class="gumbGlava"><a href="javascript:void(null);"  class="main">kategorije<span class='text'> receptov</span><span class="icon-down"></span></a>
+          	<ul  class="main-menu cf odpirac">
+                <li><a class="menu" href="/recepti/seznam/?kategorija=18"><img src="/grafika6/recepti18.png" />Sladice</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=21"><img src="/grafika6/recepti21.png" />Zelenjavne jedi</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=20"><img src="/grafika6/recepti20.png" />testenine</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=19"><img src="/grafika6/recepti19.png" />solate</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=5"><img src="/grafika6/recepti05.png" />juhe in zakuhe</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=7"><img src="/grafika6/recepti07.png" />mesne jedi</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=6"><img src="/grafika6/recepti06.png" />Kruh</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=15"><img src="/grafika6/recepti15.png" />prikuhe</a></li>
+                <li><a class="menu" href="/recepti/seznam/?kategorija=16"><img src="/grafika6/recepti16.png" />priloge</a></li> 
+                <li><a class="menu" href="/recepti/seznam/?kategorija=4"><img src="/grafika6/recepti04.png" />jajčne jedi</a></li>
+                <li><a class="menu zdravo" href="/recepti/seznam/?zdravo=1"><img src="/grafika6/recepti-zdravo.png" /><span>zdravo</span></a></li>
+                <a class="vsekat" href="/recepti/#kategorije">Vse kategorije receptov</a>         
+            </ul>
+           </li>
+        </ul>
+    </div>
+    
+
+            <form autocomplete="off" id="FormIskanje" name="FormIskanje" action="/iskanje/" method="get">
+            <input name="splosno_besede" type="text" class="ogrodjeTextBox rounded" placeholder="ključne besede">
+            <label>
+              <input type="image" name="imageField" id="imageField" src="/grafika6/lupa.PNG" class="GlavaIskanjeLupa rounded">
+            </label>
+            
+            <div class="glavniIskalecMenu">
+            <div class="main-menu">
+            <p><a class="linki3" href="/recepti/seznam/?iskanje=1">Napredno iskanje po receptih</a></p><p><a class="linki3" href="/forumi/forum/?vec=1">Iskanje po forumih</a></p>
+            </div>
+            </div>
+            
+             </form>
+      
+    
+    <div id="mojaKulinarikaMenu">
+	<ul id="prijava-menu">
+    
+    
+    
+
+   
+    <li><a href="javascript:void(null);" class="main rounded" >
+    	
+		<span class='ime'>prijava</span>
+        
+        </a>
+        
+        <ul class="main-menu cf odpirac">
+            
+            <li id="mojakulslo-login">
+
+             <form action="/mojakulinarika/prijava/" method="post" name="prijava" id="form-prijava" class="form-dizajn1 cf">
+                 <div id="mojakulslo-login-wrapper" class="cf">
+                 <input type="hidden" name="portal" value="1" />
+                    <label for="user">Uporabnik:</label><input name="uporabnik"  type="text" /><br />
+                    <label for="user">Geslo:</label><input name="geslo" type="password" /><br />
+				 </div>
+            
+            
+        
+       
+        <input name="Submit" type="submit"  class="submit" value="Prijava" />
+        
+ 		
+         </form>
+  </li>
+  <a href="/mojakulinarika/pozabljeno/" class="noborder">Pozabljeno geslo</a>
+  <a class="noborder" href="/mojakulinarika/vpis/">Nov uporabnik</a>
+  
+
+            
+            
+        </ul>
+    </li>
+    </ul>
+</div>
+    
+
+
+
+
+</header>
+</div>
+</section>
+        <div id="glavaPasica" class="cf">
+        <script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona1');
+//]]>-->
+</script> 
+        </div>
+
+<div id="bodyContainer" class="cf">
+
+    <div id="breadcrumbs">
+          <div id="breadcrumbsPortal">
+               
+          </div>
+        <!-- InstanceBeginEditable name="breadcrumbs" -->
+  <p class="breadcrumbs"><a href="/">domov</a> » <a href="/recepti/">recepti</a> » 
+  <a href="/recepti/seznam/?kategorija=11&amp;kategorija1=0">
+ostale jedi: polizdelki</a> » <span class="trenutno">Grenadirmarš</span></p>
+<!-- InstanceEndEditable -->
+    
+    </div>
+<main id="vsebina" class="cf">
+<!-- InstanceBeginEditable name="Main" -->
+
+<section id="recepti" class="recept main-left">
+
+<div id='recept-main' itemscope itemtype="http://schema.org/Recipe">
+
+  <h1 itemprop="name">
+  
+  Grenadirmarš
+          </h1>
+    <p class="podnaslov" itemprop="description">jeseniška domača jed (včasih: krompir in testenine, danes: dodana še klobasa/hrenovka)</p>
+
+
+   <div class='podatki linki'><img class='spol' src='/grafika6/ikona-spol-brez.png' title='uporabnik'><a class='username' href='/uporabniki/seznam/bernarda85/'><span itemprop='author'>Bernarda85</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=Bernarda85'><img title='Pošljite uporabniku Bernarda85 zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160; <span class='after1' itemprop='datePublished'>13.12.2006</span><span class='after1'>sprememba: 19.8.2010</span><span class='after1 no-mobile'>ID recepta: 8408</span></div> 
+   
+
+
+
+
+
+
+<div id="fotografije" class="cf">
+
+	
+
+			
+			
+			<div id="sliderRecepti" class="galleria-single-image"></div> 
+			
+			<form></p></form>
+	 
+
+
+
+
+</div>
+  
+
+
+
+<ul class="servis cf linki">
+<span itemprop='recipeCategory' style='display:none'>ostale jedi: polizdelki</span><li class='zahtevnost'><img src='/grafika6/ikona-utez.png' alt='Zahtevnost' title='zahtevnost'><img src='/grafika6/ikona-utez.png' alt='Zahtevnost' title='zahtevnost'><img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'><img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'><img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'></li><li><img class='ura' src='/grafika6/ikona-ura.png' title='45 minut' />&nbsp;<span class='cas'>45 minut</span><time itemprop='totalTime' datetime='PT45M'></time></li><li><span class='kolicina' itemprop='recipeYield'>količina:  4 osebe</span></li>
+  
+     
+
+</ul>
+
+<div id="receptSestavine"><h2>Sestavine</h2>
+      <div id="sestavine" class="articlesize linki  intext">
+        
+           <p class="cf" itemprop="recipeIngredient"><span class="label">5 </span><span class="label-value">velikih krompirjev</span></p><p class="cf" itemprop="recipeIngredient"><span class="label">ščep </span><span class="label-value">soli</span></p></span> <p class="cf" itemprop="recipeIngredient"><span class="label">300 g </span><span class="label-value">makaronov</span></p><p class="cf" itemprop="recipeIngredient"><span class="label">1 velika </span><span class="label-value">čebula</span></p></span> <p class="cf" itemprop="recipeIngredient"><span class="label">1 žlica </span><span class="label-value">ocvirkov</span></p><p class="cf" itemprop="recipeIngredient"><span class="label">1 </span><span class="label-value">klobasa (lahko tudi hrenovka)</span></p></span> <p class="cf" itemprop="recipeIngredient"><span class="label"></span><span class="label-value">sol</span></p><p class="cf" itemprop="recipeIngredient"><span class="label"></span><span class="label-value"><a href="https://www.kulinarika.net/recepti/zacimbe/101/poper/">poper</a></span></p></span> <p class="cf" itemprop="recipeIngredient"><span class="label"></span><span class="label-value">mleta kumina</span></p></span> <p class="cf empty">&nbsp;</p>
+</div>
+
+<div class="podpora1">
+<p><a href="/recepti/zacimbe/" class="bullet1 linki">Enciklopedija začimb »</a></p>
+<p><a href="/recepti/izracuni/" class="bullet1 linki">Merske tablice »</a></p>
+</div>
+
+
+
+<p class="pokal">
+<a href="/recepti/lestvica/">Najboljši TOP recepti meseca »</a>
+</p>
+
+
+
+</div>
+
+
+  <div id="receptPostopek"><h2>Postopek</h2>
+
+    <div id="postopek" class="articlesize linki  intext">
+  <p class="cf" itemprop="recipeInstructions"><span class="label"></span><span class="fullwidth data">Najprej skuhamo makarone in krompir. Med tem na ocvirkih popražimo sesekljano čebulo, da postekleni. Dodamo na kolobarje narezano klobaso in jo popečemo. Krompir olupimo, in ga narežemo na majhne rezine (kot za pražen krompir) in ga skupaj s čebulo in klobaso nekaj časa pražimo. Na koncu dodamo še odlite makarone in vse skupaj dobro premešamo in nekaj časa dušimo. Po okusu solimo, popramo in dodamo mleto kumino. Postrežemo še vroče, zraven se prileže zelena solata.</span></p><p class="cf" itemprop="recipeInstructions"><span class="label"></span><span class="fullwidth data">              </span></p><p class="cf" itemprop="recipeInstructions"><span class="label"></span><span class="fullwidth data">              </span></p>
+    
+<div class="podpora2">
+	<p><a class="bullet1 linki" href="/recepti/slovar/">Slovarček gesel in pojmov »</a></p>
+
+
+
+  </div>  
+</div>
+    <a class='link prijatelj' id='posljiprijatelju' href='mailto:?subject=Zanimiv%20recept%20na%20KULINARIKA%2ENET&body=Pozdravljen%2Da%21%0D%0A%0D%0ANa%20strani%20KULINARIKA%2Enet%20sem%20zasledil%28a%29%20zanimiv%20recept%2C%20ki%20bi%20te%20morda%20zanimal%28a%29%3A%0D%0A%0D%0Ahttps%3A%2F%2Fwww%2Ekulinarika%2Enet/recepti/8408/ostale-jedi-polizdelki/grenadirmars/'>Pošlji prijatelju »</a><a class='link novrecept' href='/mojakulinarika/recepti/oddaj/'>Prispevaj recept »</a>
+
+
+
+</div>
+<br class="clear" />
+
+
+
+
+  
+
+<h2>Opombe</h2>
+
+	<div class='articlesize'> <p>Ta recept je prevzet iz knjige pozabljenih receptov Gorenjske, natančneje Jesenic. Pri nas je pogosto na jedilniku, ker je zelo dober in preprost za pripravo, predvsem v sezoni, ko je veliko solate.</p></div>
+
+<link itemprop="image" href="https://www.kulinarika.net/slikerecepti/8408/0.jpg">
+
+</div>
+
+<ul id="servis2" class="servis clearfix">
+
+	<li class='ocena'><a href='/inc/ocena.asp?content=recept&amp;ID=8408' onclick="return hs.htmlExpand(this, { width:340, maxHeight:400, contentId: 'my-ocena', objectType: 'ajax', cacheAjax: false, dimmingOpacity:0} )">Oceni recept</a></li><li class='print'><a href='/recepti/tiskanje/?id=8408' target='_blank'>Natisni</a></li><li class='slika'><a class='linki2' href='/uporabniki/pomoc.asp#clan' onclick="return hs.htmlExpand(this, { width:340, maxHeight:400, contentId: 'nisemclan', objectType: 'ajax', cacheAjax: false} )">Dodaj sliko</a>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="nisemclan">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Niste vpisani v Kulinarika.net</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+</li><li class='statistika'><a href='/recepti/8408/statistika/' alt='statistika recepta'>Statistika</a></li>
+
+
+
+    </ul>
+    
+
+<div id="videooglas"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona25');
+//]]>-->
+</script></div>
+
+	<div id="malioglasi" class="cf">
+    
+    <div id="malioglas1"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona18');
+//]]>-->
+</script></div><div id="malioglas2"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona19');
+//]]>-->
+</script></div><div id="malioglas3"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona20');
+//]]>-->
+</script></div><div id="malioglas4"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona21');
+//]]>-->
+</script></div>
+    
+    </div>
+
+
+        <div id='mnenja-container'>   
+
+            
+      <h2>Mnenja o receptu</h2>                          
+			
+			<section id="mnenja">
+										
+										  <div class="telo2 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="1"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/kyara/'><span itemprop='author'>Kyara</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=Kyara'><img title='Pošljite uporabniku Kyara zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 24.5.2006</p>
+                                                 <p class="stevilo">Št. objav: 2384</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 13.12.2006 ob 7:09</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											   <p>tudi jaz ga delam tako, vendar na koncu dodam še žličko sladke ali močne mlete rdeče paprike, da je boljše in bolj lepe barve( ni tako bledo).</p><p>čebulo pa lahko prepražiš tudi na zaseki ali pa navadnem olju.</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  <div class="telo1 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="2"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/lisa/'><span itemprop='author'>Lisa</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=Lisa'><img title='Pošljite uporabniku Lisa zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 13.1.2005</p>
+                                                 <p class="stevilo">Št. objav: 1812</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 13.12.2006 ob 9:41</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											   <p>stvar je neprimerno boljša, če namesto makaronov uporabiš doma narejene krpice iz rezančnega testa. Meni tudi izgleda lepše. Je pa to dobra stvar!</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  <div class="telo2 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="3"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/yulchi/'><span itemprop='author'>yulchi</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=yulchi'><img title='Pošljite uporabniku yulchi zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 16.8.2007</p>
+                                                 <p class="stevilo">Št. objav: 630</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 25.10.2010 ob 0:55</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											  
+                                                  <img src="/grafika/smile_jeza.gif" alt="Jezen" width="17" height="18" align="absmiddle" /> 
+                                                   <p>Ah, žal moram povedat, da se meni osebno ta novodobni recept s klobaso ne dopade. Brez mesa je veliko veliko boljše.</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  <div class="telo1 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="4"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/Norah/'><span itemprop='author'>acna</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=acna'><img title='Pošljite uporabniku acna zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 14.6.2010</p>
+                                                 <p class="stevilo">Št. objav: 39</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 21.6.2012 ob 22:38</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											   <p>No če smo že Jeseničani, bomo pa tole jutri poskusili za kosilo! :)</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  <div class="telo2 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="5"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/hedonist/'><span itemprop='author'>hedonist</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=hedonist'><img title='Pošljite uporabniku hedonist zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 26.6.2008</p>
+                                                 <p class="stevilo">Št. objav: 4754</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 13.2.2015 ob 14:37</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											   <p>Hvala bogu, vsaj enkrat pravilno napisano ime jedi :):):)</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  <div class="telo1 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="6"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/deti8l0qew3rpz3d/'><span itemprop='author'>Pina S</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=Pina S'><img title='Pošljite uporabniku Pina S zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 5.7.2005</p>
+                                                 <p class="stevilo">Št. objav: 6</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 2.11.2016 ob 8:49</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											   <p>Tole so jedli tudi v Zasavju, pod istim imenom. Za knape je bilo dosti kalorično, čeprav brez mesa. Naša mami je tole velikokrat skuhala in vedno zraven povedala kako zgodbico iz mladosti. Pri nas bo pa takoj danes.</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  <div class="telo2 cf "> 
+											<div class="glava cf">
+												
+											
+                                                  <a name="7"></a>
+                                                  
+                                                  
+												  <a class='avtorMnenja' href='/uporabniki/seznam/mopsika/'><span itemprop='author'>johana</span></a>&nbsp;<a class='poslji-pismo' href='/mojakulinarika/sporocila/poslji/?naslovnik=johana'><img title='Pošljite uporabniku johana zasebno sporočilo' class='email' src='/grafika6/ikona-email.png' /></a>&#160;
+												 <p class="kuha">kuha že od: 5.3.2014</p>
+                                                 <p class="stevilo">Št. objav: 10169</p>
+												  
+                                    
+
+									<p class="objava">Objavljeno 2.11.2016 ob 12:46</p>			
+										
+											</div>
+
+										 <div class="msgbody">
+											  
+                                                  <img src="/grafika/smile_veselje.gif" alt="Vesel" width="23" height="18" align="absbottom" /> 
+                                                   <p>  Še vedno ga jemo, tudi pri nas bo danes za kosilo.</p>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-likes">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Seznam</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+	<script type="text/javascript">
+    			$(document).on({
+				click: function(){
+					return hs.htmlExpand(this, { width:200, maxHeight: 500, contentId: 'popup-likes', objectType: 'ajax', cacheAjax: false} )
+				}
+			},
+			 	'.popup-likes-holder');
+	</script>
+    
+    <div class='likes'><p class='like'><span class='like-stevilo'></span><span class='likes-holder'><a href='/mojakulinarika/prijava/'> uporabno</a></span></p></div><div class='ikonice cf'></div>
+                                            </div>
+										  </div>
+										  
+										  
+								</section>
+							   
+			<p class="navigacijazg">Število mnenj: 7, prikazujem mnenja  od 1 do 7</p>
+
+											<a name="pisite"></a>
+											
+											<span class="pomembno">Za pošiljanje mnenj je potreben <a href="/mojakulinarika/vpis/">vpis</a> ali
+											 <a href="/mojakulinarika/prijava/">prijava</a>!</span> 
+											 
+      </div>
+      
+      
+      <aside id='sorodniki' class='cf'><h2>Podobni recepti</h2><div class='mobileslider'><div class='sorodnik levo'><div class='image-wrap'><a href='/recepti/12043/testenine/krompirjevi-makaroni-alias-krumplistesta/' /><img src="/slikerecepti/12043/0-200x150.jpg"></a></div><div class='single-line'><a class='single-line' href='/recepti/12043/testenine/krompirjevi-makaroni-alias-krumplistesta/' />Krompirjevi makaroni alias "krumplištesta"</a></div></div><div class='sorodnik '><div class='image-wrap'><a href='/recepti/13256/testenine/wellness-testenine/' /><img src="/slikerecepti/13256/0-200x150.jpg"></a></div><div class='single-line'><a class='single-line' href='/recepti/13256/testenine/wellness-testenine/' />"Wellness" testenine</a></div></div><div class='sorodnik levo'><div class='image-wrap'><a href='/recepti/12912/ostale-jedi/krompir-in-testenine-z-lisickami/' /><img src="/slikerecepti/12912/1-200x150.jpg"></a></div><div class='single-line'><a class='single-line' href='/recepti/12912/ostale-jedi/krompir-in-testenine-z-lisickami/' />Krompir in testenine z lisičkami</a></div></div><div class='sorodnik '><div class='image-wrap'><a href='/recepti/21443//hrenovka-strucke-s-papriko-in-sirom/' /><img src="/slikerecepti/21443/1-200x150.jpg"></a></div><div class='single-line'><a class='single-line' href='/recepti/21443//hrenovka-strucke-s-papriko-in-sirom/' />Hrenovka štručke s papriko in sirom</a></div></div><div class='sorodnik levo'><div class='image-wrap'><a href='/recepti/4717/kruh/hrenovka-v-testu/' /><img src="/slikerecepti/4717/0-200x150.jpg"></a></div><div class='single-line'><a class='single-line' href='/recepti/4717/kruh/hrenovka-v-testu/' />Hrenovka v testu</a></div></div><div class='sorodnik '><div class='image-wrap'><a href='/recepti/14326/ostale-jedi/krompir-in-makaroni-ali-grenadirmars/' /><img src="/slikerecepti/14326/0-200x150.jpg"></a></div><div class='single-line'><a class='single-line' href='/recepti/14326/ostale-jedi/krompir-in-makaroni-ali-grenadirmars/' />Krompir in makaroni ali grenadirmarš</a></div></div></div></aside>
+      
+    </section>
+	
+
+<!-- InstanceEndEditable -->
+<section id="servisniBlok" class="recepti">
+<!-- InstanceBeginEditable name="neboticnik" -->
+
+<div id='nadOglas'>
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-pravila">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Pogoji sodelovanja v nagradni igri</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body en_clanek"></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-nagrade">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Več o nagradni igri</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body en_clanek"></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-nagrade-old">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Več o potekli nagradni igri</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body en_clanek"></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popup-sponzor">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>O pokrovitelju nagradne igre</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body en_clanek"></div>
+    
+    </div>
+
+</div><aside class='info-kuha cf'><h2>Kaj se danes kuha</h2><p><span><a href='/iskanje/?splosno_besede=za moške' title='10 zadetkov'>za moške</a></span> / <span><a href='/iskanje/?splosno_besede=hrenovke testenine' title='5 zadetkov'>hrenovke testenine</a></span> / <span><a href='/iskanje/?splosno_besede=pasta brise' title='2 zadetka'>pasta brise</a></span> / <span><a href='/iskanje/?splosno_besede=lososovo kanapeji' title='3 zadetki'>lososovo kanapeji</a></span> / <span><a href='/iskanje/?splosno_besede=brez mleka in glutena' title='50 zadetkov'>brez mleka in glutena</a></span> / <span><a href='/iskanje/?splosno_besede=njoki z zdrobom' title='7 zadetkov'>njoki z zdrobom</a></span> / <span><a href='/iskanje/?splosno_besede=rizota iz morskimi sadeži' title='13 zadetkov'>rizota iz morskimi sadeži</a></span> / <span><a href='/iskanje/?splosno_besede=storž koruza' title='11 zadetkov'>storž koruza</a></span> / <span><a href='/iskanje/?splosno_besede=kari' title='576 zadetkov'>kari</a></span> / <span><a href='/iskanje/?splosno_besede=pravi' title='144 zadetkov'>pravi</a></span> / <span><a href='/iskanje/?splosno_besede=rižota z radičem in' title='5 zadetkov'>rižota z radičem in</a></span> / <span><a href='/iskanje/?splosno_besede=korenje s krompirjem' title='98 zadetkov'>korenje s krompirjem</a></span></p></aside><div class='cf' id='oglasi-stranski'><div id="oglas-aside"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona6');
+//]]>-->
+</script></div><div id="oglas-aside2"><script type='text/javascript'>
+<!--//<![CDATA[
+OA_show('cona3');
+//]]>-->
+</script></div></div><aside class='ReceptiVroci cf'><h2><a href='/recepti/lestvica/?kat=11'>Najbolj vroči: avgust</a></h2><div class='mobileslider'><div class='vroci levo'><div class='slika'><a href='/recepti/3940/ostale-jedi/musaka-z-bucami-in-mletim-mesom/' /><img src="/slikerecepti/3940/0-200x150.jpg"></a></div><a class="link single-line" href='/recepti/3940/ostale-jedi/musaka-z-bucami-in-mletim-mesom/' />Musaka z bučami in mletim mesom</a></div><div class='vroci '><div class='slika'><a href='/recepti/11799/ostale-jedi/slan-bucni-zavitek-/' /><img src="/slikerecepti/11799/0-200x150.jpg"></a></div><a class="link single-line" href='/recepti/11799/ostale-jedi/slan-bucni-zavitek-/' />Slan bučni zavitek </a></div><div class='vroci levo'><div class='slika'><a href='/recepti/8104/ostale-jedi/salsa/' /><img src="/slikerecepti/8104/0-200x150.jpg"></a></div><a class="link single-line" href='/recepti/8104/ostale-jedi/salsa/' />Šalša</a></div><div class='vroci '><div class='slika'><a href='/recepti/3453/ostale-jedi/lazanja-z-malancani/' /><img src="/slikerecepti/3453/0-200x150.jpg"></a></div><a class="link single-line" href='/recepti/3453/ostale-jedi/lazanja-z-malancani/' />Lazanja z malancani</a></div><div class='vroci levo'><div class='slika'><a href='/recepti/4349/ostale-jedi/langas-z-jogurtom/' /><img src="/slikerecepti/4349/0-200x150.jpg"></a></div><a class="link single-line" href='/recepti/4349/ostale-jedi/langas-z-jogurtom/' />Langaš z jogurtom</a></div><div class='vroci '><div class='slika'><a href='/recepti/3679/ostale-jedi/topli-sendvici-malce-drugace/' /><img src="/slikerecepti/3679/0-200x150.jpg"></a></div><a class="link single-line" href='/recepti/3679/ostale-jedi/topli-sendvici-malce-drugace/' />Topli sendviči malce drugače</a></div></div></aside><section id='forum_servis'><a href='/forum/' class='linki'><h2>Forumi <span>(vroče teme)</span></h2></a><table width='100%' class='single-line'><tr class='prva'><td><a href='/forumi/tema/1096/kaj-jutri-za-kosilo-/'>Kaj jutri za kosilo?</a></td><td><img class='spol' src='/grafika6/ikona-spol-brez.png' title='uporabnik'><a class='username' href='/uporabniki/seznam/trixi/'><span itemprop='author'>Trixi</span></a></td></tr><tr class='druga'><td><a href='/forumi/tema/16585/moj-vrt/'>MOJ vrt</a></td><td><img class='spol' src='/grafika6/ikona-spol-brez.png' title='uporabnik'><a class='username' href='/uporabniki/seznam/cila/'><span itemprop='author'>Cila</span></a></td></tr><tr class='prva'><td><a href='/forumi/tema/22350/kaj-danes-za-zajtrk/'>Kaj danes za zajtrk</a></td><td><img class='spol' src='/grafika6/ikona-spol-brez.png' title='uporabnik'><a class='username' href='/uporabniki/seznam/burbonka/'><span itemprop='author'>burbonka</span></a></td></tr><tr class='druga'><td><a href='/forumi/tema/7237/malo-za-hec/'>malo za hec</a></td><td><img class='spol' src='/grafika6/ikona-spol-brez.png' title='uporabnik'><a class='username' href='/uporabniki/seznam/rajko0028/'><span itemprop='author'>rajko0028</span></a></td></tr><tr class='prva'><td><a href='/forumi/tema/5043/locevanje-zivil-90-dni-5-del/'>Ločevanje živil 90. dni - 5. del</a></td><td><img class='spol' src='/grafika6/ikona-spol-brez.png' title='uporabnik'><a class='username' href='/uporabniki/seznam/thau0383cy97hcr2/'><span itemprop='author'>dočka</span></a></td></tr></table></section><aside class='seznamSlik cf'><a href='/zid/'><h2>Zid</h2></a><div class='enaslika levo'><div class='slika'><a href='/zid/11658/'><img src='/slike/zid/68maelowjnbo7uac-200x150.jpg' alt='fotografija' class=''  /></a></div><div class='avtor'><a class='username' href='/uporabniki/seznam/SMARTY1/'><span itemprop='author'>SMARTY1</span></a></div></div><div class='enaslika'><div class='slika'><a href='/zid/11643/'><img src='/slike/zid/1043ulipxul8dpkv-200x150.jpg' alt='fotografija' class=''  /></a></div><div class='avtor'><a class='username' href='/uporabniki/seznam/ninja24/'><span itemprop='author'>Ninja24</span></a></div></div><div class='enaslika levo'><div class='slika'><a href='/zid/11660/'><img src='/slike/zid/vof6prw1j9qru0ig-200x150.jpg' alt='fotografija' class=''  /></a></div><div class='avtor'><a class='username' href='/uporabniki/seznam/trixi/'><span itemprop='author'>Trixi</span></a></div></div><div class='enaslika'><div class='slika'><a href='/zid/11659/'><img src='/slike/zid/u3b6ovezfc3v1zy3-200x150.jpg' alt='fotografija' class=''  /></a></div><div class='avtor'><a class='username' href='/uporabniki/seznam/primozg/'><span itemprop='author'>primozg</span></a></div></div><div class='enaslika levo'><div class='slika'><a href='/zid/11655/'><img src='/slike/zid/7vb7ih41iidkejco-200x150.jpg' alt='fotografija' class=''  /></a></div><div class='avtor'><a class='username' href='/uporabniki/seznam/Katarincci/'><span itemprop='author'>Katarinči</span></a></div></div><div class='enaslika'><div class='slika'><a href='/zid/11652/'><img src='/slike/zid/h3o4tnni1w9vgdv2-200x150.jpg' alt='fotografija' class=''  /></a></div><div class='avtor'><a class='username' href='/uporabniki/seznam/ninja24/'><span itemprop='author'>Ninja24</span></a></div></div></aside><a href='/recepti/seznam/?video=1'><h2>Video recepti</h2></a><article class='enNajnovejsi videostranski'><a href='/recepti/21994/kruh/grski-pita-kruh/'><div class='image-wrap video'><img src='/slikerecepti/21994/video/sc8ssWlgOBU_320x180.jpg'/></div><p class='ime single-line'>Grški pita kruh</p></a></article><article class='enNajnovejsi videostranski'><a href='/recepti/21995/eksotika/pad-thai/'><div class='image-wrap video'><img src='/slikerecepti/21995/video/uJq7K4-vTec_320x180.jpg'/></div><p class='ime single-line'>Pad Thai</p></a></article>
+
+<!--
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkulinarika%2F&tabs=timeline&width=300&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=182018238801081" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+-->
+  
+  
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="prijatelj">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Pošlji prijatelju</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="my-ocena">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Ocenite recept</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="ocenerecepta">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Ocene recepta</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="pomoc-priporocamo">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Zraven tekne</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="pomoc-vino">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Vinski kotiček</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body "></div>
+    
+    </div>
+
+
+
+    <div class="highslide-html-content highslide-my-standard-popup" id="popupSubscribed">
+        <div class="highslide-header">
+        
+                             <div class="FotoAlbumPremakniSliko_handle">			
+                        <div class="highslide-move" onclick="return false">
+                        
+                         
+                        <span><a href="#" onclick="return hs.close(this)">✕</a></span><div class='highslide-heading'>Naročeni ste na nova mnenja</div>
+                        
+                        </div>
+              </div>
+        
+        </div>
+        <div class="highslide-body ">Ko bo nekdo napisal novo mnenje k temu receptu, boste o tem dobili e-mail obvestilo (le enkrat, dokler ne odprete spet tega recepta). Na naročanje se lahko odjavite na samem receptu ali pa iz beležke.</div>
+    
+    </div>
+
+
+    <!-- InstanceEndEditable -->
+</section>
+</main>
+</div>
+<div class="push"></div>
+</div>
+
+
+
+<footer class="footer cf">
+    <div id="footer-top">
+      
+    </div>
+	<div class="cf">
+	<p>&copy; 2019 Spletna kulinarika d.o.o.</p>
+	<ul>
+    
+		<li><a href="/oglasevanje/">Trženje</a></li>	
+		<li><a href="/pravo/">Pogoji uporabe</a></li>
+		<li><a href="/zasebnost/">Zasebnost</a></li>
+		<li><a href="/novosti/">Obvestila</a></li>
+   		<li><a href="/faq/">Pomoč</a></li>
+        <li><a href="/zanimivo/dogodki/">Dogodki</a></li>
+        <li><a href="/uporabniki/statistika/">Statistika</a></li>
+		<li><a href="/uporabniki/seznam/">Člani</a></li>
+	</ul>
+</div>
+    
+  <p class="statistika">Na Kulinarika.net
+ je  zdaj  500 obiskovalcev.
+Danes je bilo prikazanih že 3.579, ta mesec pa 1.893.210 receptov in odprtih 6.759.301 strani.
+  
+  </p>
+</footer>
+
+<script type='text/javascript'>
+<!--//<![CDATA[
+if (isMobile == true) {
+var ox_u = 'https://oglasi2.kulinarika.net/www/delivery/al.php?zoneid=24&layerstyle=simple&align=left&valign=top&padding=0&padding=0&shifth=0&shiftv=0&closebutton=t&nobg=t&noborder=t';
+if (document.context) ox_u += '&context=' + escape(document.context);
+document.write("<scr"+"ipt type='text/javascript' src='" + ox_u +"'></scr"+"ipt>");
+}
+//]]>--></script>
+
+<!-- InstanceBeginEditable name="dno" -->
+
+<!-- InstanceEndEditable -->
+<a href='#0' class='cd-top' title='na vrh'>&uarr;</a>
+</body>
+<!-- InstanceEnd --></html>
